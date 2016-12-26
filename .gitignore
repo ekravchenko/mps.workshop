@@ -1,0 +1,12 @@
+node_modules/
+target/
+build/
+.settings/
+.idea/
+.project
+.classpath
+*.prefs
+*.iml
+*.log
+local.*.properties
+**/dbunit/schema.dtd
