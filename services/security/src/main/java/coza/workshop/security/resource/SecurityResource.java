@@ -15,6 +15,6 @@ public class SecurityResource {
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public AuthResponse auth(@RequestBody AuthRequest request) {
-        return new AuthResponse(true);
+        return new AuthResponse(true, "");
     }
 }

@@ -6,4 +6,5 @@ import lombok.Value;
 public class AuthResponse {
 
     boolean success;
+    String errorMsg;
 }
