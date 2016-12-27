@@ -11,3 +11,7 @@ build/
 local.*.properties
 **/dbunit/schema.dtd
 .DS_Store
+/mps.ui/target/
+/mps.ui/mps.ui.iml
+mps.workshop.ipr
+mps.workshop.iws
