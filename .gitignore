@@ -10,3 +10,4 @@ build/
 *.log
 local.*.properties
 **/dbunit/schema.dtd
+.DS_Store
