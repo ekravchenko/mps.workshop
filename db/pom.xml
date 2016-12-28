@@ -16,11 +16,30 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-maven-plugin</artifactId>
-            <version>${flyway.version}</version>
-            <scope>provided</scope>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.37</version>
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>${flyway.version}</version>
+                <configuration combine.self="override">
+                    <configFile>${basedir}/src/main/resources/local.db.properties</configFile>
+                    <outOfOrder>true</outOfOrder>
+                    <validateOnMigrate>false</validateOnMigrate>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>sync-db</id>
+                        <phase>none</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
