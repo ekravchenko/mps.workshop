@@ -1,0 +1,16 @@
+version: '2'
+
+volumes:
+  mysql:
+
+services:
+  mysqldb:
+    image: mysql:5.7.17
+    container_name: mysqldb
+    environment:
+      MYSQL_DATABASE: workshop
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql:/var/lib/mysql
