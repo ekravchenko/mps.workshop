@@ -3,6 +3,9 @@ version: '2'
 volumes:
   mysql:
 
+networks:
+  backend:
+
 services:
   mysqldb:
     image: mysql:5.7.17
@@ -14,3 +17,11 @@ services:
       - "3306:3306"
     volumes:
       - mysql:/var/lib/mysql
+    networks:
+      backend:
+
+  db.migration:
+    image: db.migration
+    container_name: db.migration
+    networks:
+      backend:
