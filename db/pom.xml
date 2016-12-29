@@ -23,6 +23,7 @@
     </dependencies>
 
     <build>
+        <finalName>db.migration</finalName>
         <plugins>
             <plugin>
                 <groupId>org.flywaydb</groupId>
@@ -39,6 +40,12 @@
                         <phase>none</phase>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${exec-maven-plugin.version}</version>
             </plugin>
         </plugins>
     </build>
