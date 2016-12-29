@@ -34,3 +34,12 @@ services:
       backend:
     ports:
       - "9000:8080"
+
+  doctor:
+    image: doctor
+    environment:
+      - JAVA_OPTS=-Xms200m -Xmx400m
+    networks:
+      backend:
+    ports:
+      - "9002:8080"
