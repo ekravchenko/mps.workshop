@@ -22,6 +22,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Maven plugins -->
         <exec-maven-plugin.version>1.4.0</exec-maven-plugin.version>
+        <!-- Libs -->
+        <flyway.version>4.0.3</flyway.version>
+        <h2.version>1.4.177</h2.version>
+        <jooq.version>3.8.2</jooq.version>
+        <HikariCP.version>2.4.7</HikariCP.version>
     </properties>
 
     <!-- BOM (Bills of Materials) will let use dependencies of Spring boot and Spring cloud nicely.
