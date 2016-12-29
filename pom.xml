@@ -9,8 +9,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>db</module>
         <module>tools</module>
+        <module>db</module>
     </modules>
 
     <properties>
