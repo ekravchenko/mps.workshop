@@ -1,0 +1,1 @@
+ALTER TABLE business_user ADD Password VARCHAR (20) NOT NULL;
