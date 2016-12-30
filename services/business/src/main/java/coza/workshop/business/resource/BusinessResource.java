@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@RequestMapping("/")
 public class BusinessResource {
 
     @Autowired
@@ -20,7 +21,6 @@ public class BusinessResource {
 
     @RequestMapping(
             method = RequestMethod.GET,
-            path = "/business",
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public List<Business> getAllBusinesses() {
