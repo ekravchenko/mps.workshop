@@ -1,5 +1,5 @@
 FROM docker.base
-EXPOSE 8080
+EXPOSE 9000
 ADD target/doctor.jar doctor.jar
 ADD src/main/resources/docker/start.sh start.sh
 RUN sh -c 'touch /doctor.jar'
