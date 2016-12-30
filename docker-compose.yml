@@ -36,14 +36,22 @@ services:
     networks:
       backend:
 
+  discovery:
+    image: discovery
+    container_name: discovery
+    environment:
+      - JAVA_OPTS=-Xms200m -Xmx400m
+    ports:
+      - "8761:8761"
+    networks:
+      backend:
+
   security:
     image: security
     environment:
       - JAVA_OPTS=-Xms200m -Xmx400m
     networks:
       backend:
-    ports:
-      - "9000:8080"
 
   business:
     image: business
@@ -51,8 +59,6 @@ services:
       - JAVA_OPTS=-Xms200m -Xmx400m
     networks:
       backend:
-    ports:
-      - "9001:8080"
 
   doctor:
     image: doctor
@@ -60,5 +66,3 @@ services:
       - JAVA_OPTS=-Xms200m -Xmx400m
     networks:
       backend:
-    ports:
-      - "9002:8080"
