@@ -1,0 +1,6 @@
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <logger name="org.jooq" level="WARN"/>
+    <logger name="org.jooq.tools.LoggerListener" level="DEBUG"/>
+</configuration>
