@@ -9,6 +9,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>infrastructure</module>
         <module>tools</module>
         <module>db</module>
         <module>services</module>
