@@ -1,6 +1,28 @@
 <configuration>
-    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/spring.log}"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+    <include resource="org/springframework/boot/logging/logback/file-appender.xml" />
+
+    <appender name="STASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>logstash:4560</destination>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <customFields>{"host_name":"business"}</customFields>
+            <includeCallerData>true</includeCallerData>
+        </encoder>
+    </appender>
 
     <logger name="org.jooq" level="WARN"/>
     <logger name="org.jooq.tools.LoggerListener" level="DEBUG"/>
+
+    <logger name="coza.workshop.business" level="DEBUG"/>
+    <logger name="net.logstash.logback" level="DEBUG"/>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+        <appender-ref ref="STASH" />
+    </root>
+
 </configuration>
